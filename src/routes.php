@@ -18,3 +18,14 @@ $app->get('/phpinfo', function (Request $request, Response $response) {
     echo phpinfo();
     return $response;
 });
+
+//----------------------------------------------------------------------------------------------------------------------
+// Inspect Controller
+//----------------------------------------------------------------------------------------------------------------------
+
+$app->any('/inspect/{action}', function (Request $request, Response $response, $args) {
+
+    $controller = new Controllers\InspectController($this);
+    $methodName = LetterCase::kebabToCamel($args['action']);
+    return $controller->{$methodName}($request, $response);
+});
