@@ -1,0 +1,20 @@
+{
+  "type": "project",
+  "description": "Testing project for PHP 7 utility library Praline",
+  "license": "MIT",
+  
+  "repository": [
+    {
+      "type": "path",
+      "url": "../praline"
+    }
+  ],
+  
+  "require": {
+    "php": "^7.1.0",
+    
+    "slim/slim": "^3.8",
+    
+    "slimek/praline": "dev-master"
+  }
+}
