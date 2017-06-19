@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc475db07f840360bdcad2c66e365095",
-    "content-hash": "4c4c21b82bcdfff8c790a3f29ec4c9a5",
+    "hash": "fadf9ffd739647109cb616bb162bf135",
+    "content-hash": "40a818684174c9f0ade25d8036a00d82",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -300,16 +300,11 @@
         {
             "name": "slimek/praline",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/slimek/Praline.git",
-                "reference": "5e6f196cf9595f73539e68c17328febc9c50be3e"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/slimek/Praline/zipball/5e6f196cf9595f73539e68c17328febc9c50be3e",
-                "reference": "5e6f196cf9595f73539e68c17328febc9c50be3e",
-                "shasum": ""
+                "type": "path",
+                "url": "../praline/",
+                "reference": "a3b9a75b0e482e0202b19e363412b5b3704de306",
+                "shasum": null
             },
             "require": {
                 "php": ">=7.0.0"
@@ -323,12 +318,10 @@
                     "Praline\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "PHP 7 Utility Library",
-            "time": "2017-06-16 08:03:56"
+            "description": "PHP 7 Utility Library"
         }
     ],
     "packages-dev": [],

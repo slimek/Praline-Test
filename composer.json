@@ -3,7 +3,7 @@
   "description": "Testing project for PHP 7 utility library Praline",
   "license": "MIT",
   
-  "repository": [
+  "repositories": [
     {
       "type": "path",
       "url": "../praline"
