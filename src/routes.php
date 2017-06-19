@@ -20,12 +20,14 @@ $app->get('/phpinfo', function (Request $request, Response $response) {
 });
 
 //----------------------------------------------------------------------------------------------------------------------
-// Inspect Controller
+// 泛用分派
 //----------------------------------------------------------------------------------------------------------------------
 
-$app->any('/inspect/{action}', function (Request $request, Response $response, $args) {
+$app->post('/{controller}/{action}', function (Request $request, Response $response, $args) {
 
-    $controller = new Controllers\InspectController($this);
+    $className = 'Controllers\\' . LetterCase::kebabToPascal($args['controller']) . 'Controller';
     $methodName = LetterCase::kebabToCamel($args['action']);
+
+    $controller = new $className($this);
     return $controller->{$methodName}($request, $response);
 });
