@@ -9,6 +9,9 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Praline\Utils\LetterCase;
 
+// Middleware
+$routeLogger = new Praline\Slim\Middleware\RouteLogger($app->getContainer());
+
 //----------------------------------------------------------------------------------------------------------------------
 // 獨立 Actions
 //----------------------------------------------------------------------------------------------------------------------
@@ -17,7 +20,8 @@ $app->get('/phpinfo', function (Request $request, Response $response) {
 
     echo phpinfo();
     return $response;
-});
+
+})->add($routeLogger);
 
 //----------------------------------------------------------------------------------------------------------------------
 // 泛用分派
@@ -30,4 +34,5 @@ $app->post('/{controller}/{action}', function (Request $request, Response $respo
 
     $controller = new $className($this);
     return $controller->{$methodName}($request, $response);
-});
+
+})->add($routeLogger);

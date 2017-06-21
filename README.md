@@ -22,3 +22,4 @@ workspace\
 本服務使用下列第三方程式庫：
 
 * [Slim Framework](https://www.slimframework.com/)：網路服務微框架，本服務的基礎架構。
+* [Monolog](https://seldaek.github.io/monolog/)：收集與輸出歷程記錄。
