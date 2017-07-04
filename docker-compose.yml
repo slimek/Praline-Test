@@ -17,3 +17,11 @@ services:
       - .:/srv/praline-test
       - ../praline:/srv/praline
       - /var/log/php:/var/log/php
+    links:
+      - fluentd
+
+  fluentd:
+    image: fluent/fluentd:v0.12-debian
+    volumes:
+      - ./docker/fluentd.conf:/fluentd/etc/fluent.conf
+      - /var/log/fluentd:/fluentd/log

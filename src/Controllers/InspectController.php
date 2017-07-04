@@ -2,10 +2,11 @@
 namespace Controllers;
 
 // Composer
+use Praline\Slim\Controller;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-class InspectController
+class InspectController extends Controller
 {
     public function __construct($container)
     {

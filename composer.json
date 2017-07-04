@@ -15,6 +15,7 @@
     
     "slim/slim": "^3.8",
 
+    "fluent/logger": "^1.0.0",
     "monolog/monolog": "^1.23.0",
     
     "slimek/praline": "dev-master"

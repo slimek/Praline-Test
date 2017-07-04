@@ -21,5 +21,9 @@ $container[Praline\ContainerIds::LOGGER] = function ($container) {
     $handler->setFormatter(new Monolog\Formatter\LineFormatter(null, null, true, true));
     $logger->pushHandler($handler);
 
+    // 透過 Fluentd 輸出 log
+    $handler = new \Praline\Monolog\MonologFluentHandler('fluentd');  // 這是 docker-compose.yml 裡面的服務名稱
+    $logger->pushHandler($handler);
+
     return $logger;
 };
