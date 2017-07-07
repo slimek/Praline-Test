@@ -16,6 +16,9 @@ workspace\
   praline-test\
 ```  
 
+請在 `praline-test` 目錄下建立 `data` 目錄，並且將擁有者改為 www-data 。
+
+
 程式庫
 ------
 
