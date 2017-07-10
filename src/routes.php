@@ -38,6 +38,18 @@ $app->post('/session/proceed', function (Request $request, Response $response) {
 })->add(new Praline\Slim\Middleware\SessionAuthorizer($container));
 
 //----------------------------------------------------------------------------------------------------------------------
+// Filter Controller
+// - 測試 IP 篩選
+//----------------------------------------------------------------------------------------------------------------------
+
+$app->get('/filter/trace-ip', function (Request $request, Response $response) {
+
+    $controller = new Controllers\FilterController($this);
+    return $controller->traceIp($request, $response);
+
+})->add(new Praline\Slim\Middleware\IpAddressFilter($container, ['61.216.82.121']));
+
+//----------------------------------------------------------------------------------------------------------------------
 // 泛用分派
 //----------------------------------------------------------------------------------------------------------------------
 
