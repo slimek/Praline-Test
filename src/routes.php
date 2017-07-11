@@ -51,6 +51,7 @@ $app->get('/filter/trace-ip', function (Request $request, Response $response) {
 
 //----------------------------------------------------------------------------------------------------------------------
 // 泛用分派
+// - 注意：如果呼叫 API 時的 controller 名稱打錯，會顯示找不到 XxxController.php 檔案的錯誤訊息
 //----------------------------------------------------------------------------------------------------------------------
 
 $app->post('/{controller}/{action}', function (Request $request, Response $response, $args) {
@@ -62,4 +63,3 @@ $app->post('/{controller}/{action}', function (Request $request, Response $respo
     return $controller->{$methodName}($request, $response);
 
 })->add($routeLogger);
-
