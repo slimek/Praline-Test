@@ -36,7 +36,7 @@ $container[Praline\ContainerIds::SESSION_MANAGER] = function ($container) {
 
     $dataDir = '../data/';  // 附註：FilesystemCachePool 會自己建立 cache 子目錄
 
-    $adapter = new League\Flysystem\Adapter\Local('../data/');
+    $adapter = new League\Flysystem\Adapter\Local($dataDir);
     $filesystem = new League\Flysystem\Filesystem($adapter);
     $pool = new Cache\Adapter\Filesystem\FilesystemCachePool($filesystem);
     $sessionManager = new Praline\Session\SessionManager($pool, $container);
