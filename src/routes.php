@@ -12,7 +12,9 @@ use Praline\Utils\LetterCase;
 $container = $app->getContainer();
 
 // Middleware
-$routeLogger = new Praline\Slim\Middleware\RouteLogger($container);
+$routeLogger = new Praline\Slim\Middleware\RouteLogger($container, [
+    'ignoreMethods' => ['OPTIONS'],
+]);
 
 //----------------------------------------------------------------------------------------------------------------------
 // 獨立 Actions
