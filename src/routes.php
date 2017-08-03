@@ -54,7 +54,7 @@ $app->get('/filter/trace-ip', function (Request $request, Response $response) {
 // - 注意：如果呼叫 API 時的 controller 名稱打錯，會顯示找不到 XxxController.php 檔案的錯誤訊息
 //----------------------------------------------------------------------------------------------------------------------
 
-$app->post('/{controller}/{action}', function (Request $request, Response $response, $args) {
+$app->any('/{controller}/{action}', function (Request $request, Response $response, $args) {
 
     $className = 'Controllers\\' . LetterCase::kebabToPascal($args['controller']) . 'Controller';
     $methodName = LetterCase::kebabToCamel($args['action']);
