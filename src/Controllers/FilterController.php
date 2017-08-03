@@ -14,7 +14,7 @@ use Slim\Http\Response;
 
 class FilterController extends Controller
 {
-    public function FilterController($container)
+    public function __construct($container)
     {
     }
 
